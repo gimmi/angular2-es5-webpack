@@ -19,5 +19,9 @@ module.exports = Injectable().Class({
     },
     getHeroes: function() {
         return Promise.resolve(this.heroes)
+    },
+    getHero: function(id) {
+        var hero = this.heroes.find(function(x) { return x.id === id })
+        return Promise.resolve(hero)
     }
 })

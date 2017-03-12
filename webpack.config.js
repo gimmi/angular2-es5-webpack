@@ -13,6 +13,7 @@ module.exports = {
             '@angular/platform-browser',
             '@angular/platform-browser-dynamic',
             '@angular/forms',
+            '@angular/router',
             'bootstrap/dist/css/bootstrap.css'
         ],
         app: "./src/main.js"
