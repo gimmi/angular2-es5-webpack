@@ -12,6 +12,7 @@ module.exports = {
             '@angular/core',
             '@angular/platform-browser',
             '@angular/platform-browser-dynamic',
+            '@angular/forms',
             'bootstrap/dist/css/bootstrap.css'
         ],
         app: "./src/main.js"
