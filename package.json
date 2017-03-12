@@ -18,6 +18,18 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
-    "bootstrap": "3.3.7"
+    "bootstrap": "3.3.7",
+
+    "core-js": "2.4.1",
+    "rxjs": "5.2.0",
+    "zone.js": "0.7.8",
+
+    "@angular/core": "2.4.9",
+    "@angular/common": "2.4.9",
+    "@angular/compiler": "2.4.9",
+    "@angular/platform-browser": "2.4.9",
+    "@angular/platform-browser-dynamic": "2.4.9",
+    "@angular/http": "2.4.9",
+    "@angular/router": "3.4.9"
   }
 }

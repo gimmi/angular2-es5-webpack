@@ -5,9 +5,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         vendor: [
+            'core-js/es6',
+            'core-js/es7/reflect',
+            'zone.js/dist/zone',
+            'rxjs',
+            '@angular/core',
+            '@angular/platform-browser',
+            '@angular/platform-browser-dynamic',
             'bootstrap/dist/css/bootstrap.css'
         ],
-        app: "./src/app.module.js"
+        app: "./src/main.js"
     },
     devtool: 'source-map',
     output: {
@@ -22,13 +29,18 @@ module.exports = {
         ]
     },
     plugins: [
+        // Workaround for https://github.com/angular/angular/issues/11580
+        new webpack.ContextReplacementPlugin(
+            /@angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
+            path.resolve(__dirname, 'src')
+        ),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor']
         }),
         new HtmlWebpackPlugin({ 
             template: './src/index.html', 
             filename: 'index.html',
-            inject: 'head'
+            inject: 'body'
         })
     ],
     devServer: {
