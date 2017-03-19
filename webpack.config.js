@@ -24,11 +24,18 @@ module.exports = {
         filename: "[name].[chunkhash].js"
     },
     module: {
-        rules: [
-            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-            { test: /\.html$/, use: ['raw-loader'] },
-            { test: /\.(eot|woff|woff2|ttf|svg)(\?\S*)?$/, use: ['file-loader'] }
-        ]
+        rules: [{ 
+            oneOf: [{
+                // See https://github.com/gajus/to-string-loader#use-case
+                test: /\.component\.css$/, use: ['to-string-loader', 'css-loader']
+            }, { 
+                test: /\.css$/, use: ['style-loader', 'css-loader']
+            }]
+        }, { 
+            test: /\.html$/, use: ['raw-loader']
+        }, { 
+            test: /\.(eot|woff|woff2|ttf|svg)(\?\S*)?$/, use: ['file-loader'] 
+        }]
     },
     plugins: [
         // Workaround for https://github.com/angular/angular/issues/11580

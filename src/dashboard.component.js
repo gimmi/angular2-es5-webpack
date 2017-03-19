@@ -5,6 +5,7 @@ var HeroService = require('./hero.service')
 
 module.exports = Component({
     selector: 'my-dashboard',
+    styles: [ require('./dashboard.component.css') ],
     template: require('./dashboard.component.html')
 }).Class({
     constructor: [HeroService, function DashboardComponent(heroService) {
