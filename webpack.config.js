@@ -46,6 +46,7 @@ module.exports = {
         })
     ],
     devServer: {
+        inline: false,
         proxy: {
             '/api': {
                 // logLevel: 'debug',
